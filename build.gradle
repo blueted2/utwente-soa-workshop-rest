@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('gradle.plugin.com.boxfuse.client:gradle-plugin-publishing:5.0.7')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+/**
+ * General module configuration
+ */
+group = 'nl.cofano.schedulerapp'
+version = '0.1.0'
+sourceCompatibility = 1.8
+
+configurations {
+    jarLibs
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    // Spring boot web starter
+    compile('org.springframework.boot:spring-boot-starter-web')
+    
+    // Add cron utils for scheduler
+    compile('com.cronutils:cron-utils:6.0.2')
+    
+    // Add swagger for rest API
+    compile('io.springfox:springfox-swagger2:2.9.2')
+    compile('io.springfox:springfox-swagger-ui:2.9.2')
+    
+    // Add lombok for getters and setters
+    compileOnly('org.projectlombok:lombok:1.16.20')
+    annotationProcessor('org.projectlombok:lombok:1.16.20')
+}

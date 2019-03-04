@@ -26,29 +26,4 @@ public class ScheduleItemRestController {
     public Collection<ScheduleItem> getAll(){
         return service.getItems();
     }
-
-    @RequestMapping(
-        method = RequestMethod.PUT,
-        path="/item/{id}"
-    )
-    public ScheduleItem updateItem(@PathVariable Integer id, @RequestBody ScheduleItem scheduleItem){
-        scheduleItem.setId(id);
-        return service.updateItem(scheduleItem);
-    }
-
-    @RequestMapping(
-        method = RequestMethod.POST,
-        path = "/item"
-    )
-    public ScheduleItem addItem(@RequestBody ScheduleItem scheduleItem){
-        return service.createItem(scheduleItem);
-    }
-
-    @RequestMapping(
-        method = RequestMethod.DELETE,
-        path="/item/{id}"
-    )
-    public void deleteItem(@PathVariable Integer id){
-        service.deleteItem(id);
-    }
 }

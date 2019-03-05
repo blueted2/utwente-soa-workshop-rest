@@ -1,8 +1,8 @@
 package nl.cofano.schedulerapp;
 
-import lombok.extern.slf4j.Slf4j;
 import nl.cofano.schedulerapp.scheduler.ScheduleItem;
 import nl.cofano.schedulerapp.scheduler.ScheduleItemService;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,9 +10,9 @@ import javax.annotation.PostConstruct;
 import java.time.Instant;
 
 @Component
-@Slf4j
 public class InitSchedulerItems {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(InitSchedulerItems.class);
     @Autowired private ScheduleItemService service;
  
     @PostConstruct

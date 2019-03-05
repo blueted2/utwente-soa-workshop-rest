@@ -5,11 +5,12 @@ import com.cronutils.model.CronType;
 import com.cronutils.model.definition.CronDefinitionBuilder;
 import com.cronutils.model.time.ExecutionTime;
 import com.cronutils.parser.CronParser;
-import lombok.extern.slf4j.Slf4j;
 import nl.cofano.schedulerapp.exceptions.TodoCreateException;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
 import java.time.Instant;
 
 /**
@@ -17,9 +18,9 @@ import java.time.Instant;
  *  Due the fact the cronparser uses his own data library, there are some conversations necessary.
  */
 @Component
-@Slf4j
 public class ItemScheduler {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(ItemScheduler.class);
     @Autowired private ScheduleItemService storage;
     @Autowired private TodoService todoService;
 

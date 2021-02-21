@@ -25,7 +25,7 @@ public class InitSchedulerItems {
             "* * * * *",
             Instant.now(),
             "Minute Item",
-            0
+            1
         ));
 
         // Add schedule item for every 5 minutes

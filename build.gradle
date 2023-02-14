@@ -35,12 +35,12 @@ repositories {
 
 dependencies {
     // Spring boot web starter
-    compile('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-web')
     
     // Add cron utils for scheduler
-    compile('com.cronutils:cron-utils:6.0.2')
+    implementation('com.cronutils:cron-utils:6.0.2')
     
     // Add swagger for rest API
-    compile('io.springfox:springfox-swagger2:2.9.2')
-    compile('io.springfox:springfox-swagger-ui:2.9.2')
+    implementation('io.springfox:springfox-swagger2:2.9.2')
+    implementation('io.springfox:springfox-swagger-ui:2.9.2')
 }

@@ -42,6 +42,6 @@ public class TodoService {
         TodoRepresentation todoRepresentation = new TodoRepresentation(assignee, description);
 
         log.info("Adding todo with values: description={}, assignee={}", description, assignee);
-        todoRepresentation = restTemplate.postForObject(url, todoRepresentation, TodoRepresentation.class);
+        restTemplate.postForObject(url, todoRepresentation, TodoRepresentation.class);
     }
 }
